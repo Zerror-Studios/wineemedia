@@ -6,7 +6,7 @@ gsap.registerPlugin(ScrollTrigger)
 
 const OurTeam = () => {
     const membersRefs = useRef([])
-    const teamMembers = [
+   const teamMembers = [
         {
             image: "/team/Ramkrishna Tripathi.webp",
             name: "Ramkrishna Tripathi",
@@ -18,26 +18,23 @@ const OurTeam = () => {
             profession: "Data Scientist"
         },
         {
-            image: "/team/Himanshu Khatri.webp",
-            name: "Himanshu Khatri",
-            profession: "2D Generalist"
-        },
-        {
-            image: "/team/Swati Simran.webp",
-            name: "Swati Simran",
-            profession: "Creative Director"
-        },
-        {
-            image: "/team/Jay Revandkar.webp",
-            name: "Jay Revandkar",
-            profession: "3D Generalist"
-        },
-        {
             image: "/team/Sumeet Patwa.webp",
             name: "Sumeet",
             profession: "3D Character Artist"
         },
+         {
+            image: "/team/Ashwini Batham.webp",
+            name: "Ashwini Batham",
+            profession: "Social media Manager"
+        },
+         {
+            image: "/team/Armaan Chouhan.webp",
+            name: "Armaan Chauhan",
+            profession: "Social Media Apprentice"
+        }
+
     ];
+
 
     useEffect(() => {
         gsap.to(".client-txtt", {
@@ -84,7 +81,7 @@ const OurTeam = () => {
             <div style={{perspective:"1000px"}} className='team-container w-full flex flex-wrap gap-[4vw] md:gap-[2vw] py-[5vw] sm:py-[2vw]'>
                 {teamMembers.map((m, i) => (<div key={i} ref={(el => membersRefs.current[i] = el)} className="member mt-[1vw] shrink-0 w-full sm:w-[44vw] md:w-[29.2vw]">
                     <div key={i} className='team-img w-full h-[50vh] md:h-[45vh] ' style={{ clipPath: "polygon(0 100%, 100% 100%, 100% 100%, 0 100%)" }}>
-                        <Image width={1000} height={1000} className='w-[100%] h-[100%] object-cover object-center' src={m.image} alt={m.name} title={m.name} />
+                        <Image width={1000} height={1000} className='w-[100%] h-[100%] object-cover object-[50%,22%]' src={m.image} alt={m.name} title={m.name} />
                     </div>
                     <h5 className='text-black text-[4vw] sm:text-[3vw] md:text-[1.8vw] lg:text-[1.4vw] mt-[4vw] md:mt-[2vw] font-[heading] tracking-wide lg:tracking-tight capitalize'>{m.name}</h5>
                     <p className='text-black/60 text-[4vw] sm:text-[2vw] md:text-[1.8vw] lg:text-[1.2vw] font-[heading2] mt-[1.5vw] md:mt-[.6vw] tracking-wide lg:tracking-tight capitalize'>{m.profession}</p>
