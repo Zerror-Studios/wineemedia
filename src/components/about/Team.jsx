@@ -20,25 +20,21 @@ const Team = () => {
             profession: "Data Scientist"
         },
         {
-            image: "/team/Himanshu Khatri.webp",
-            name: "Himanshu Khatri",
-            profession: "2D Generalist"
-        },
-        {
-            image: "/team/Swati Simran.webp",
-            name: "Swati Simran",
-            profession: "Creative Director"
-        },
-        {
-            image: "/team/Jay Revandkar.webp",
-            name: "Jay Revandkar",
-            profession: "3D Generalist"
-        },
-        {
             image: "/team/Sumeet Patwa.webp",
             name: "Sumeet",
             profession: "3D Character Artist"
+        },
+         {
+            image: "/team/Ashwini Batham.webp",
+            name: "Ashwini Batham",
+            profession: "Social media Manager"
+        },
+         {
+            image: "/team/Armaan Chouhan.webp",
+            name: "Armaan Chauhan",
+            profession: "Social Media Apprentice"
         }
+
     ];
 
     useEffect(() => {
@@ -123,7 +119,7 @@ const Team = () => {
             </div>
 
             <div className='image-cont absolute right-[2vw] top-[13vw] w-[16vw] h-[20vw] bg-red-600'>
-                <img className='w-full h-full object-cover' src={teamMembers[index].image} alt="" />
+                <img className='w-full h-full object-cover object-[50%,28%]' src={teamMembers[index].image} alt="" />
             </div>
 
 
