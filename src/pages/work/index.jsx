@@ -1,10 +1,11 @@
 import Footer from '@/components/footer/Footer'
 import SeoHeader from '@/components/seo/SeoHeader'
 import Section1 from '@/components/work/Section1'
-import React, { useEffect } from 'react'
+import { workData } from '@/helpers/WorkData'
+import React from 'react'
 
 
-const Work = ({meta}) => {
+const Work = ({meta ,data}) => {
 
   
 
@@ -12,7 +13,7 @@ const Work = ({meta}) => {
    <>
    <SeoHeader meta={meta}/>
     <div className='relative bg-black'>
-      <Section1 />
+      <Section1 data={data}  />
       <Footer />
     </div>
    </>
@@ -22,6 +23,7 @@ const Work = ({meta}) => {
 export default Work;
 
 export async function getStaticProps() {
+   const data = Object.values(workData)
 
   const meta = {
     title:
@@ -32,5 +34,5 @@ export async function getStaticProps() {
     author: "WineeMedia",
     robots: "index,follow",
   };
-  return { props: { meta: meta } };
+  return { props: { meta: meta ,data } };
 }

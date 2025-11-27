@@ -5,44 +5,46 @@ import Section1 from '@/components/home/Section1'
 import Section4 from '@/components/home/Section4'
 import Services from '@/components/home/Services'
 import SeoHeader from '@/components/seo/SeoHeader'
+import { servicesData } from '@/helpers/ServicesData'
+import { workData } from '@/helpers/WorkData'
 import gsap from 'gsap'
-import React, { useEffect, useRef, useState } from 'react'
+import React, { useRef, useState } from 'react'
 
-const Home = ({meta}) => {
+const Home = ({ meta, works, services }) => {
   const playerRef = useRef(null)
   const videoRef = useRef(null)
- 
+
   const [player, setplayer] = useState("ri-volume-mute-line")
 
   const handleMouseMove = (e) => {
     gsap.to(playerRef.current, {
-      left: e.clientX, 
+      left: e.clientX,
       top: e.clientY,
-  });
+    });
   }
 
-  const handlePlayer = ()=>{
-    if(player === "ri-volume-mute-line"){
+  const handlePlayer = () => {
+    if (player === "ri-volume-mute-line") {
       setplayer("ri-volume-up-line")
       videoRef.current.muted = false
-    }else{
+    } else {
       setplayer("ri-volume-mute-line")
-       videoRef.current.muted = true
+      videoRef.current.muted = true
     }
   }
 
   return (
     <>
-    <SeoHeader meta={meta}/>
-    <div onMouseMove={(e) => handleMouseMove(e)} className='relative bg-black'>
-      <div id='player'  ref={playerRef} className='w-[10vw] sm:w-[6vw] md:w-[4vw] scale-0 h-[10vw] sm:h-[6vw] md:h-[4vw] cursor-pointer pointer-events-none flex items-center justify-center bg-white rounded-full fixed -translate-x-1/2 -translate-y-1/2 z-[999] text-black'><i className={`${player} text-[4vw] sm:text-[2.5vw] md:text-[1.5vw]`}></i></div>
-      <Section1 videoRef={videoRef} playerRef={playerRef} handlePlayer={handlePlayer} />
-      <Marquee />
-      <Services />
-      <Section4  />
-      <OurWorks />
-      <Footer />
-    </div>
+      <SeoHeader meta={meta} />
+      <div onMouseMove={(e) => handleMouseMove(e)} className='relative bg-black'>
+        <div id='player' ref={playerRef} className='w-[10vw] sm:w-[6vw] md:w-[4vw] scale-0 h-[10vw] sm:h-[6vw] md:h-[4vw] cursor-pointer pointer-events-none flex items-center justify-center bg-white rounded-full fixed -translate-x-1/2 -translate-y-1/2 z-[999] text-black'><i className={`${player} text-[4vw] sm:text-[2.5vw] md:text-[1.5vw]`}></i></div>
+        <Section1 videoRef={videoRef} playerRef={playerRef} handlePlayer={handlePlayer} />
+        <Marquee />
+        <Services />
+        <Section4 works={works} />
+        <OurWorks servicesData={services} />
+        <Footer />
+      </div>
     </>
   )
 }
@@ -51,6 +53,8 @@ export default Home;
 
 
 export async function getStaticProps() {
+  const works = Object.values(workData).slice(0, 6)
+  const services = servicesData;
   const meta = {
     title:
       "WineeMedia | Elevate Your Brand with Creative Solutions",
@@ -60,5 +64,5 @@ export async function getStaticProps() {
     author: "WineeMedia",
     robots: "index,follow",
   };
-  return { props: { meta: meta } };
+  return { props: { works, meta: meta, services } };
 }

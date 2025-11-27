@@ -4,7 +4,7 @@ import Reviews from '@/components/about/Reviews'
 import ScrollTrigger from 'gsap/dist/ScrollTrigger'
 import Image from 'next/image'
 gsap.registerPlugin(ScrollTrigger)
-const OurClient = () => {
+const OurClient = ({clientData}) => {
     const clipRefs = useRef([])
     const handleClipMove = (i) => {
         gsap.to(clipRefs.current[i].querySelector(".clipeffect"), {
@@ -17,59 +17,6 @@ const OurClient = () => {
         })
     }
 
-    const clientData = [
-        {
-            logo: "/clients/dawn.webp",
-            name: "dawn knight",
-            images:"/images/dawn-cover1.webp"
-        },
-        {
-            logo: "/clients/zerror.webp",
-            name: "zerror studios",
-            images:"/images/zerror-cover1.webp"
-        },
-        {
-            logo: "/clients/brandCreation.webp",
-            name: "brand creation",
-            images:"/images/brand-cover1.webp"
-        },
-        {
-            logo: "/clients/envision.webp",
-            name: "envision dazzling",
-            images:"/images/envision-cover1.webp"
-        },
-        {
-            logo: "/clients/daroma.webp",
-            name: "daroma an italian cafe",
-            images:"/images/daroma-cover1.webp"
-        },
-        {
-            logo: "/clients/meera.webp",
-            name: "meera",
-            images:"/images/meera-cover1.webp"
-        },
-        {
-            logo: "/clients/nexPoze.webp",
-            name: "nexpoze production",
-            images:"/images/nexpoze-cover1.webp"
-        },
-
-        {
-            logo: "/clients/pepe.webp",
-            name: "pepe cafe",
-            images:"/images/Pe-cover1.webp"
-        },
-        {
-            logo: "/clients/Pace.webp",
-            name: "pace",
-            images:"/images/pacep-cover1.webp"
-        },
-        {
-            logo: "/clients/maab.webp",
-            name: "maab cosmetics",
-            images:"/images/maab-cover1.webp"
-        },
-    ]
 
     useEffect(() => {
         gsap.to(".client-txt", {
