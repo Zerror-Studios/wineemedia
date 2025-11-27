@@ -27,6 +27,7 @@ const OurTeam = () => {
             name: "Ashwini Batham",
             profession: "Social media Manager"
         },
+        
          {
             image: "/team/Armaan Chouhan.webp",
             name: "Armaan Chauhan",
