@@ -47,4 +47,10 @@ export const menus = [
     submenus: [
     ],
   },
+  {
+    name: "Campaign ",
+    link: "/campaign",
+    submenus: [
+    ],
+  },
 ];

@@ -19,10 +19,12 @@ const Transition = ({ children }) => {
   const isHomePage = router.pathname === "/";
   const isAboutPage = router.pathname === "/about-us";
   const isWorkPage = router.pathname.startsWith("/work");
+  const isCampaignPage = router.pathname === "/campaign";
 
   const getRouteName = () => {
     if (isHomePage) return "wineemedia";
     if (isAboutPage) return "about";
+    if (isCampaignPage) return "campaign";
     if (isWorkPage) {
       const workName = router.query.name;
       return workName ? `${workName}` : "work";
