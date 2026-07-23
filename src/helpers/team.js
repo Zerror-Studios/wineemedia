@@ -1,6 +1,6 @@
 export const teamMembers = [
     {
-        image: "/team/Ramkrishna.webp",
+        image: "/team/Ramkrishna Tripathi.webp",
         name: "Ramkrishna Tripathi",
         profession: "Founder / CEO",
     },
