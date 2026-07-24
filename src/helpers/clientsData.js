@@ -15,7 +15,7 @@ export const clientData = [
         images: "/images/dawn-cover1.webp"
     },
     {
-        logo: "/clients/zerror.webp",
+        logo: "/clients/zerror.svg",
         name: "zerror studios",
         images: "/images/zerror-cover1.webp"
     },
