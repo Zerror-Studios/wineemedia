@@ -40,16 +40,17 @@ const ProblemSection = () => {
 
       rows.forEach((row) => {
         const num = row.querySelector(".problem-num");
-        if (!num) return;
+        const content = row.querySelector(".problem-content");
 
-        gsap.from(num, {
-          yPercent: 100,
+        gsap.from([num, content].filter(Boolean), {
+          y: 40,
           opacity: 0,
-          duration: 0.8,
+          duration: 0.85,
           ease: "power3.out",
+          stagger: 0.08,
           scrollTrigger: {
             trigger: row,
-            start: "top 70%",
+            start: "top 60%",
             toggleActions: "play none none reverse",
           },
         });
@@ -95,7 +96,7 @@ const ProblemSection = () => {
                   {item.number}
                 </span>
               </div>
-              <div className="w-full sm:w-[50%] md:w-[60%] lg:w-[50%]">
+              <div className="problem-content w-full sm:w-[50%] md:w-[60%] lg:w-[50%]">
                 <h4 className="text-[6vw] my-[2vw] sm:my-0 md:text-[3vw] lg:text-[2vw] font-[heading] leading-none">
                   {item.title}
                 </h4>

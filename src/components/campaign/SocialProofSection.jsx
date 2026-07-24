@@ -34,14 +34,17 @@ const stories = [
 ];
 
 const SocialProofSection = ({ onWatchStory }) => {
+  const sectionRef = useRef(null);
   const paraRef = useRef(null);
   const headingRef = useRef(null);
+  const imageRefs = useRef([]);
 
   useEffect(() => {
     if (!paraRef.current || !headingRef.current) return;
 
     let anim;
-    let imgAnim;
+    const parallaxTriggers = [];
+
     document.fonts.ready.then(() => {
       const paraSplit = SplitText.create(paraRef.current, {
         type: "chars, words, lines",
@@ -61,33 +64,47 @@ const SocialProofSection = ({ onWatchStory }) => {
         },
       });
 
-      anim.from(paraSplit.lines, {
-        yPercent: 100,
-        opacity: 0,
-        duration: 0.8,
-        stagger: {
-          amount: 0.2,
-        },
-      })
-        .from(headingSplit.lines, {
+      anim
+        .from(paraSplit.lines, {
           yPercent: 100,
           opacity: 0,
           duration: 0.8,
           stagger: {
             amount: 0.2,
           },
-        }, "-=0.4");
+        })
+        .from(
+          headingSplit.lines,
+          {
+            yPercent: 100,
+            opacity: 0,
+            duration: 0.8,
+            stagger: {
+              amount: 0.2,
+            },
+          },
+          "-=0.4"
+        );
 
-      imgAnim = gsap.to(".social-proof-img", {
-        clipPath: "polygon(0% 100%, 100% 100%, 100% 0%, 0% 0%)",
-        duration: 1.2,
-        stagger: 0.3,
-        ease: "power2.out",
-        scrollTrigger: {
-          trigger: ".social-proof-images-container",
-          start: "top 80%",
-          toggleActions: "play none none reverse",
-        }
+      imageRefs.current.forEach((img) => {
+        if (!img) return;
+        const frame = img.parentElement;
+
+        const tween = gsap.fromTo(
+          img,
+          { yPercent: -12 },
+          {
+            yPercent: 12,
+            ease: "none",
+            scrollTrigger: {
+              trigger: frame,
+              start: "top bottom",
+              end: "bottom top",
+              scrub: true,
+            },
+          }
+        );
+        parallaxTriggers.push(tween);
       });
     });
 
@@ -96,15 +113,18 @@ const SocialProofSection = ({ onWatchStory }) => {
         anim.scrollTrigger?.kill();
         anim.kill();
       }
-      if (imgAnim) {
-        imgAnim.scrollTrigger?.kill();
-        imgAnim.kill();
-      }
+      parallaxTriggers.forEach((tween) => {
+        tween.scrollTrigger?.kill();
+        tween.kill();
+      });
     };
   }, []);
 
   return (
-    <section className="w-full px-[4vw] sm:px-[2vw] py-[6vw] sm:py-[3vw]">
+    <section
+      ref={sectionRef}
+      className="w-full px-[4vw] sm:px-[2vw] py-[6vw] sm:py-[3vw]"
+    >
       <SectionHeader title="Results" />
 
       <p
@@ -124,15 +144,15 @@ const SocialProofSection = ({ onWatchStory }) => {
       </h3>
 
       <div className="social-proof-images-container flex flex-col sm:flex-row gap-[8vw] sm:gap-[3vw]">
-        {stories.map((story) => (
+        {stories.map((story, i) => (
           <div key={story.videoId} className="w-full sm:w-1/2 flex flex-col">
             <div className="w-full aspect-[4/5] sm:aspect-square bg-[#ffffff0e] overflow-hidden mb-[5vw] sm:mb-[2vw]">
               <img
+                ref={(el) => (imageRefs.current[i] = el)}
                 src={story.image}
                 alt={story.name}
                 referrerPolicy="no-referrer"
-                className="social-proof-img w-full h-full object-cover"
-                style={{ clipPath: "polygon(0 100%, 100% 100%, 100% 100%, 0 100%)" }}
+                className="social-proof-img w-full h-[120%] object-cover will-change-transform"
               />
             </div>
 

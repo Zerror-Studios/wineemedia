@@ -43,18 +43,34 @@ const HowItWorksSection = () => {
 
       stepContainers.forEach((step) => {
         const line = step.querySelector(".step-line");
-        if (!line) return;
+        const content = step.querySelector(".step-content");
 
-        gsap.to(line, {
-          width: "100%",
-          duration: 1,
-          ease: "power2.out",
-          scrollTrigger: {
-            trigger: step,
-            start: "top 85%",
-            toggleActions: "play none none reverse",
-          },
-        });
+        if (line) {
+          gsap.to(line, {
+            width: "100%",
+            duration: 1,
+            ease: "power2.out",
+            scrollTrigger: {
+              trigger: step,
+              start: "top 60%",
+              toggleActions: "play none none reverse",
+            },
+          });
+        }
+
+        if (content) {
+          gsap.from(content, {
+            y: 40,
+            opacity: 0,
+            duration: 0.85,
+            ease: "power3.out",
+            scrollTrigger: {
+              trigger: step,
+              start: "top 60%",
+              toggleActions: "play none none reverse",
+            },
+          });
+        }
       });
 
       const campaignParent = document.querySelector(".campaign_paren");
@@ -114,15 +130,17 @@ const HowItWorksSection = () => {
               <div className="w-full h-[1px] relative mb-[4vw] sm:mb-[2vw]">
                 <div className="step-line absolute left-0 top-0 h-full bg-black/50 w-0" />
               </div>
-              <p className="font-[heading2] tracking-wide text-[3.5vw] sm:text-[1.5vw] md:text-[1.1vw] text-black/80 mb-[2vw] sm:mb-[1vw]">
-                ({step.number}) {step.label}
-              </p>
-              <h4 className="font-[heading] tracking-wide text-[4vw] sm:text-[3vw] md:text-[1.8vw] lg:text-[1.4vw] text-black mb-[2vw] sm:mb-[1vw]">
-                {step.title}
-              </h4>
-              <p className="font-[heading2] tracking-wide text-[4vw] sm:text-[2vw] md:text-[1.8vw] lg:text-[1.3vw] xl:text-[1.2vw] text-black md:w-[90%]">
-                {step.body}
-              </p>
+              <div className="step-content">
+                <p className="font-[heading2] tracking-wide text-[3.5vw] sm:text-[1.5vw] md:text-[1.1vw] text-black/80 mb-[2vw] sm:mb-[1vw]">
+                  ({step.number}) {step.label}
+                </p>
+                <h4 className="font-[heading] tracking-wide text-[4vw] sm:text-[3vw] md:text-[1.8vw] lg:text-[1.4vw] text-black mb-[2vw] sm:mb-[1vw]">
+                  {step.title}
+                </h4>
+                <p className="font-[heading2] tracking-wide text-[4vw] sm:text-[2vw] md:text-[1.8vw] lg:text-[1.3vw] xl:text-[1.2vw] text-black md:w-[90%]">
+                  {step.body}
+                </p>
+              </div>
             </div>
           </div>
         ))}
