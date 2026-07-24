@@ -1,5 +1,9 @@
-import React, { useState } from "react";
-import SectionHeader from "./SectionHeader";
+import React, { useState, useEffect, useRef } from "react";
+import SectionHeaderLight from "./SectionHeaderLight";
+import gsap from "gsap";
+import ScrollTrigger from "gsap/dist/ScrollTrigger";
+
+gsap.registerPlugin(ScrollTrigger);
 
 const faqData = [
   {
@@ -38,10 +42,37 @@ const faqData = [
 
 const FaqSection = () => {
   const [openFaqIndex, setOpenFaqIndex] = useState(null);
+  const containerRef = useRef(null);
+
+  useEffect(() => {
+    if (!containerRef.current) return;
+
+    const ctx = gsap.context(() => {
+      const faqItems = containerRef.current.querySelectorAll(".faq-item");
+
+      faqItems.forEach((item) => {
+        const line = item.querySelector(".faq-line");
+        if (!line) return;
+
+        gsap.to(line, {
+          width: "100%",
+          duration: 1,
+          ease: "power2.out",
+          scrollTrigger: {
+            trigger: item,
+            start: "top 85%",
+            toggleActions: "play none none reverse",
+          },
+        });
+      });
+    }, containerRef);
+
+    return () => ctx.revert();
+  }, []);
 
   return (
-    <section className="w-full px-[4vw] sm:px-[2vw] py-[6vw] sm:py-[3vw]">
-      <SectionHeader
+    <section ref={containerRef} className="w-full px-[4vw] sm:px-[2vw] py-[6vw] sm:py-[3vw]">
+      <SectionHeaderLight
         title="FAQ"
         fullWidthLine
         contentClassName="w-full sm:w-[63%] md:w-[70%] lg:w-[60%]"
@@ -49,10 +80,10 @@ const FaqSection = () => {
 
       <div className="w-full flex justify-center">
         <div className="w-full sm:w-[63%] md:w-[70%] lg:w-[60%]">
-          <h3 className="font-[heading2] tracking-wide text-white text-[4vw] md:text-[2vw] mb-[2vw] sm:mb-[1vw]">
+          <h3 className="font-[heading2] tracking-wide text-black text-[4vw] md:text-[2vw] mb-[2vw] sm:mb-[1vw]">
             Questions Founders Ask.
           </h3>
-          <p className="font-[heading2] tracking-wide text-[3.5vw] sm:text-[1.6vw] md:text-[1.2vw] text-white/50 mb-[8vw] sm:mb-[4vw]">
+          <p className="font-[heading2] tracking-wide text-[3.5vw] sm:text-[1.6vw] md:text-[1.2vw] text-black/50 mb-[8vw] sm:mb-[4vw]">
             Deep Insight Into the Personal Branding System
           </p>
 
@@ -60,16 +91,19 @@ const FaqSection = () => {
             {faqData.map((faq, index) => {
               const isOpen = openFaqIndex === index;
               return (
-                <div key={index} className="border-t border-white/20">
+                <div key={index} className="faq-item relative">
+                  <div className="w-full h-[1px] relative">
+                    <div className="faq-line absolute left-0 top-0 h-full bg-black/20 w-0" />
+                  </div>
                   <button
                     onClick={() => setOpenFaqIndex(isOpen ? null : index)}
                     className="w-full text-left py-[5vw] sm:py-[2.2vw] flex items-start justify-between gap-[3vw] cursor-pointer"
                   >
-                    <span className="font-[heading] tracking-wide text-[3.8vw] sm:text-[1.7vw] md:text-[1.35vw] text-white w-[90%]">
+                    <span className="font-[heading] tracking-wide text-[3.8vw] sm:text-[1.7vw] md:text-[1.35vw] text-black w-[90%]">
                       {faq.q}
                     </span>
                     <i
-                      className={`ri-arrow-down-s-line text-[5vw] sm:text-[2vw] md:text-[1.4vw] text-white transition-transform duration-300 shrink-0 ${
+                      className={`ri-arrow-down-s-line text-[5vw] sm:text-[2vw] md:text-[1.4vw] text-black transition-transform duration-300 shrink-0 ${
                         isOpen ? "rotate-180" : ""
                       }`}
                     />
@@ -81,14 +115,18 @@ const FaqSection = () => {
                         : "max-h-0"
                     }`}
                   >
-                    <p className="font-[heading2] tracking-wide text-[3.8vw] sm:text-[1.6vw] md:text-[1.2vw] xl:text-[1.1vw] text-white/80 w-[95%] sm:w-[90%]">
+                    <p className="font-[heading2] tracking-wide text-[3.8vw] sm:text-[1.6vw] md:text-[1.2vw] xl:text-[1.1vw] text-black/80 w-[95%] sm:w-[90%]">
                       {faq.a}
                     </p>
                   </div>
                 </div>
               );
             })}
-            <div className="border-t border-white/20" />
+            <div className="faq-item relative">
+              <div className="w-full h-[1px] relative">
+                <div className="faq-line absolute left-0 top-0 h-full bg-black/20 w-0" />
+              </div>
+            </div>
           </div>
         </div>
       </div>

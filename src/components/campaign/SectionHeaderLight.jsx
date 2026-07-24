@@ -5,7 +5,7 @@ import ScrollTrigger from "gsap/dist/ScrollTrigger";
 
 gsap.registerPlugin(SplitText, ScrollTrigger);
 
-const SectionHeader = ({
+const SectionHeaderLight = ({
   title,
   className = "",
   fullWidthLine = false,
@@ -56,28 +56,28 @@ const SectionHeader = ({
             <div className={contentClassName}>
               <h2
                 ref={headingRef}
-                className="text-[10vw] sm:text-[3.5vw] font-[heading2] leading-none text-white"
+                className="text-[10vw] sm:text-[3.5vw] font-[heading2] leading-none text-black"
               >
                 {title}
               </h2>
             </div>
           </div>
-          <div className="w-full h-[1px] bg-white/20 mt-[3vw] sm:mt-[1.2vw]" />
+          <div className="w-full h-[1px] bg-black/50 mt-[3vw] sm:mt-[1.2vw]" />
         </>
       ) : (
         <>
           <h2
             ref={headingRef}
-            className="text-[10vw] sm:text-[3.5vw] font-[heading2] leading-none text-white"
+            className="text-[10vw] sm:text-[3.5vw] font-[heading2] leading-none text-black"
           >
             {title}
           </h2>
-          <div className="w-full h-[1px] bg-white/20 mt-[3vw] sm:mt-[1.2vw]" />
+          <div className="w-full h-[1px] bg-black/20 mt-[3vw] sm:mt-[1.2vw]" />
         </>
       )}
     </div>
   );
 };
 
-export default SectionHeader;
+export default SectionHeaderLight;
 

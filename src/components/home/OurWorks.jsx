@@ -36,7 +36,7 @@ const Section4 = ({ servicesData }) => {
       duration: 1,
       scrollTrigger: {
         trigger: ".our-works",
-        start: "top 90%",
+        start: "top 70%",
         end: "top 60%",
         scrub: 1,
       },

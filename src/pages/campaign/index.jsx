@@ -38,23 +38,23 @@ const Campaign = ({ meta }) => {
         type="module"
       />
 
-      <div className="relative bg-black text-white">
+      <div className=" campaign_paren relative bg-black text-white">
         <Navbar />
         <QualifierBar />
 
         <main className="relative z-10 w-full">
           <Hero />
-          <SectionDivider className="mx-[4vw] sm:mx-[2vw] w-auto" />
+          {/* <SectionDivider className="mx-[4vw] sm:mx-[2vw] w-auto" /> */}
           <VslSection />
-          <SectionDivider className="mx-[4vw] sm:mx-[2vw] w-auto" />
+          {/* <SectionDivider className="mx-[4vw] sm:mx-[2vw] w-auto" /> */}
           <SocialProofSection onWatchStory={setActiveVideoId} />
-          <SectionDivider className="mx-[4vw] sm:mx-[2vw] w-auto" />
+          {/* <SectionDivider className="mx-[4vw] sm:mx-[2vw] w-auto" /> */}
           <ProblemSection />
-          <SectionDivider className="mx-[4vw] sm:mx-[2vw] w-auto" />
+          {/* <SectionDivider className="mx-[4vw] sm:mx-[2vw] w-auto" /> */}
           <HowItWorksSection />
-          <SectionDivider className="mx-[4vw] sm:mx-[2vw] w-auto" />
+          {/* <SectionDivider className="mx-[4vw] sm:mx-[2vw] w-auto" /> */}
           <FaqSection />
-          <SectionDivider className="mx-[4vw] sm:mx-[2vw] w-auto" />
+          {/* <SectionDivider className="mx-[4vw] sm:mx-[2vw] w-auto" /> */}
           <FinalCtaSection />
         </main>
 

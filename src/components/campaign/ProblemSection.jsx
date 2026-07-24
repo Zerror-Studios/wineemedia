@@ -1,5 +1,9 @@
-import React from "react";
+import React, { useEffect, useRef } from "react";
 import SectionHeader from "./SectionHeader";
+import gsap from "gsap";
+import ScrollTrigger from "gsap/dist/ScrollTrigger";
+
+gsap.registerPlugin(ScrollTrigger);
 
 const problems = [
   {
@@ -26,8 +30,37 @@ const problems = [
 ];
 
 const ProblemSection = () => {
+  const containerRef = useRef(null);
+
+  useEffect(() => {
+    if (!containerRef.current) return;
+
+    const ctx = gsap.context(() => {
+      const rows = containerRef.current.querySelectorAll(".problem-row");
+
+      rows.forEach((row) => {
+        const num = row.querySelector(".problem-num");
+        if (!num) return;
+
+        gsap.from(num, {
+          yPercent: 100,
+          opacity: 0,
+          duration: 0.8,
+          ease: "power3.out",
+          scrollTrigger: {
+            trigger: row,
+            start: "top 70%",
+            toggleActions: "play none none reverse",
+          },
+        });
+      });
+    }, containerRef);
+
+    return () => ctx.revert();
+  }, []);
+
   return (
-    <section className="w-full px-[4vw] sm:px-[2vw] py-[6vw] sm:py-[3vw]">
+    <section ref={containerRef} className="w-full px-[4vw] sm:px-[2vw] py-[6vw] sm:py-[3vw]">
       <SectionHeader
         title="The Problem"
         fullWidthLine
@@ -49,18 +82,19 @@ const ProblemSection = () => {
         </div>
       </div>
 
-      <div className="w-full text-white py-[6vw] sm:py-[2vw] sm:px-0">
+      <div className=" kndadc w-full text-white py-[6vw] sm:py-[2vw] sm:px-0">
         {problems.map((item, index) => (
           <div
             key={item.number}
-            className={`w-full ${
-              index !== problems.length - 1 ? "border-b border-white/20" : ""
-            } flex items-center flex-col sm:flex-row justify-center py-[5vw]`}
+            className={`problem-row w-full ${index !== problems.length - 1 ? "border-b border-white/20" : ""
+              } flex items-center flex-col sm:flex-row justify-center py-[5vw]`}
           >
             <div className="flex w-full flex-col sm:flex-row items-start justify-center">
-              <span className="w-full sm:w-[13%] text-[15vw] sm:text-[8vw] font-[heading2] leading-none">
-                {item.number}
-              </span>
+              <div className="w-full sm:w-[13%] overflow-hidden">
+                <span className="problem-num inline-block text-[15vw] sm:text-[8vw] font-[heading2] leading-none">
+                  {item.number}
+                </span>
+              </div>
               <div className="w-full sm:w-[50%] md:w-[60%] lg:w-[50%]">
                 <h4 className="text-[6vw] my-[2vw] sm:my-0 md:text-[3vw] lg:text-[2vw] font-[heading] leading-none">
                   {item.title}
@@ -78,3 +112,4 @@ const ProblemSection = () => {
 };
 
 export default ProblemSection;
+

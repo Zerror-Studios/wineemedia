@@ -1,10 +1,44 @@
-import React from "react";
+import React, { useEffect, useRef } from "react";
 import WistiaPlayer from "./WistiaPlayer";
+import gsap from "gsap";
+import ScrollTrigger from "gsap/dist/ScrollTrigger";
+
+gsap.registerPlugin(ScrollTrigger);
 
 const VslSection = () => {
+  const containerRef = useRef(null);
+  const videoWrapperRef = useRef(null);
+
+  useEffect(() => {
+    if (!containerRef.current || !videoWrapperRef.current) return;
+
+    const anim = gsap.fromTo(
+      videoWrapperRef.current,
+      { width: "80%" },
+      {
+        width: "100%",
+        ease: "none",
+        scrollTrigger: {
+          trigger: containerRef.current,
+          start: "top bottom",
+          end: "top top",
+          scrub: true,
+        },
+      }
+    );
+
+    return () => {
+      anim.scrollTrigger?.kill();
+      anim.kill();
+    };
+  }, []);
+
   return (
-    <section className="w-full px-[4vw] sm:px-[2vw] py-[6vw] sm:py-[3vw]">
-      <div className="w-full aspect-video bg-[#ffffff0e] overflow-hidden">
+    <section ref={containerRef} className="w-full px-[4vw] sm:px-[2vw] py-[6vw] sm:py-[3vw] flex justify-center">
+      <div
+        ref={videoWrapperRef}
+        className="aspect-video bg-[#ffffff0e] overflow-hidden w-[60%]"
+      >
         <WistiaPlayer mediaId="zgy68e6hrb" aspect="1.7777777777777777" />
       </div>
     </section>
@@ -12,3 +46,4 @@ const VslSection = () => {
 };
 
 export default VslSection;
+

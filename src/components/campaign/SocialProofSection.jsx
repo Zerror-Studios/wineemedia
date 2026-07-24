@@ -1,5 +1,10 @@
-import React from "react";
+import React, { useEffect, useRef } from "react";
 import SectionHeader from "./SectionHeader";
+import gsap from "gsap";
+import SplitText from "gsap/dist/SplitText";
+import ScrollTrigger from "gsap/dist/ScrollTrigger";
+
+gsap.registerPlugin(SplitText, ScrollTrigger);
 
 const stories = [
   {
@@ -29,21 +34,96 @@ const stories = [
 ];
 
 const SocialProofSection = ({ onWatchStory }) => {
+  const paraRef = useRef(null);
+  const headingRef = useRef(null);
+
+  useEffect(() => {
+    if (!paraRef.current || !headingRef.current) return;
+
+    let anim;
+    let imgAnim;
+    document.fonts.ready.then(() => {
+      const paraSplit = SplitText.create(paraRef.current, {
+        type: "chars, words, lines",
+        linesClass: "line-mask",
+      });
+
+      const headingSplit = SplitText.create(headingRef.current, {
+        type: "chars, words, lines",
+        linesClass: "line-mask",
+      });
+
+      anim = gsap.timeline({
+        scrollTrigger: {
+          trigger: paraRef.current,
+          start: "top 85%",
+          toggleActions: "play none none reverse",
+        },
+      });
+
+      anim.from(paraSplit.lines, {
+        yPercent: 100,
+        opacity: 0,
+        duration: 0.8,
+        stagger: {
+          amount: 0.2,
+        },
+      })
+        .from(headingSplit.lines, {
+          yPercent: 100,
+          opacity: 0,
+          duration: 0.8,
+          stagger: {
+            amount: 0.2,
+          },
+        }, "-=0.4");
+
+      imgAnim = gsap.to(".social-proof-img", {
+        clipPath: "polygon(0% 100%, 100% 100%, 100% 0%, 0% 0%)",
+        duration: 1.2,
+        stagger: 0.3,
+        ease: "power2.out",
+        scrollTrigger: {
+          trigger: ".social-proof-images-container",
+          start: "top 80%",
+          toggleActions: "play none none reverse",
+        }
+      });
+    });
+
+    return () => {
+      if (anim) {
+        anim.scrollTrigger?.kill();
+        anim.kill();
+      }
+      if (imgAnim) {
+        imgAnim.scrollTrigger?.kill();
+        imgAnim.kill();
+      }
+    };
+  }, []);
+
   return (
     <section className="w-full px-[4vw] sm:px-[2vw] py-[6vw] sm:py-[3vw]">
       <SectionHeader title="Results" />
 
-      <p className="font-[heading2] tracking-wide text-[4vw] md:text-[2vw] mb-[5vw] sm:mb-[3vw] md:w-[70%]">
+      <p
+        ref={paraRef}
+        className="font-[heading2] tracking-wide text-[4vw] md:text-[2vw] mb-[5vw] sm:mb-[3vw] md:w-[70%]"
+      >
         Since 2021. India&apos;s Only Done-For-You Personal Branding System For
         Founders. 62+ Founders across 10 countries. From invisible online to
         paying customers coming in.
       </p>
 
-      <h3 className="font-[heading2] tracking-wide text-white text-[5.5vw] sm:text-[3.5vw] md:text-[2.5vw] leading-[1.15] mb-[8vw] sm:mb-[4vw] md:w-[75%]">
+      <h3
+        ref={headingRef}
+        className="font-[heading2] tracking-wide text-white text-[5.5vw] sm:text-[3.5vw] md:text-[2.5vw] leading-[1.15] mb-[8vw] sm:mb-[4vw] md:w-[75%]"
+      >
         Founders Who Had No Personal Brand Online. Here Is What Changed.
       </h3>
 
-      <div className="flex flex-col sm:flex-row gap-[8vw] sm:gap-[3vw] border-t border-b border-white/20 py-[8vw] sm:py-[4vw]">
+      <div className="social-proof-images-container flex flex-col sm:flex-row gap-[8vw] sm:gap-[3vw]">
         {stories.map((story) => (
           <div key={story.videoId} className="w-full sm:w-1/2 flex flex-col">
             <div className="w-full aspect-[4/5] sm:aspect-square bg-[#ffffff0e] overflow-hidden mb-[5vw] sm:mb-[2vw]">
@@ -51,7 +131,8 @@ const SocialProofSection = ({ onWatchStory }) => {
                 src={story.image}
                 alt={story.name}
                 referrerPolicy="no-referrer"
-                className="w-full h-full object-cover"
+                className="social-proof-img w-full h-full object-cover"
+                style={{ clipPath: "polygon(0 100%, 100% 100%, 100% 100%, 0 100%)" }}
               />
             </div>
 
