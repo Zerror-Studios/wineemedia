@@ -56,7 +56,7 @@ const StickyCtaBar = () => {
   target="_blank"
   rel="noopener noreferrer"
   onClick={trackLead}
-  className="cta-glow viewall overflow-hidden effecttxt  bg-white px-[5vw] sm:px-[2.5vw] md:px-[1.8vw] relative rounded-full py-[2vw] sm:py-[.9vw] md:py-[.55vw] text-white inline-flex items-center gap-[1vw] cursor-pointer w-full md:w-auto justify-center"
+  className="cta-glow viewall overflow-hidden effecttxt  bg-white px-[5vw] sm:px-[2.5vw] md:px-[1.8vw] relative rounded-full py-[3vw] sm:py-[.9vw] md:py-[.55vw] text-white inline-flex items-center gap-[1vw] cursor-pointer w-full md:w-auto justify-center"
 >
   {/* Animated live indicator */}
   {/* <span className="relative flex h-3 w-3 z-[10]">
@@ -64,11 +64,11 @@ const StickyCtaBar = () => {
     <span className="relative inline-flex h-3 w-3 rounded-full bg-[#512477]"></span>
   </span> */}
 
-  <div className="relative z-[10] overflow-hidden font-semibold h-[4vw] sm:h-[2vw] md:h-[1.3vw] text-[2.6vw] sm:text-[1.4vw] md:text-[.95vw] font-[heading]">
-    <h2 className="one capitalize whitespace-nowrap text-[#512477] h-[4vw] sm:h-[2vw] md:h-[1.3vw] leading-[4vw] sm:leading-[2vw] md:leading-[1.3vw]">
+  <div className="relative z-[10] overflow-hidden font-semibold h-[4.5vw] sm:h-[2vw] md:h-[1.3vw]  text-[4vw] max-sm:leading-[4.1vw] sm:text-[1.4vw] md:text-[.95vw] font-[heading]">
+    <h2 className="one capitalize whitespace-nowrap text-[#512477] h-[4.5vw] sm:h-[2vw] md:h-[1.3vw] leading-[4vw] sm:leading-[2vw] md:leading-[1.3vw]">
       Book Your Founder Strategy Call
     </h2>
-    <h2 className="one capitalize  whitespace-nowrap text-[white] h-[4vw] sm:h-[2vw] md:h-[1.3vw] leading-[4vw] sm:leading-[2vw] md:leading-[1.3vw]">
+    <h2 className="one capitalize  whitespace-nowrap text-[white] h-[4.5vw] sm:h-[2vw] md:h-[1.3vw] leading-[4vw] sm:leading-[2vw] md:leading-[1.3vw]">
       Book Your Founder Strategy Call
     </h2>
   </div>

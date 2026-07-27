@@ -7,23 +7,23 @@ gsap.registerPlugin(ScrollTrigger);
 
 const problems = [
   {
-    number: "1",
+    number: "01",
     title:
       "The competitor with a weaker business is getting your paying customers.",
     body: "Same space. Weaker work. But they show up every week and you do not. Visibility beats quality every single time.",
   },
   {
-    number: "2",
+    number: "02",
     title: "Every paying customer still has to be convinced from scratch.",
     body: "No trust before the first conversation. Every sale starts from zero. A founder with personal branding working for them does not have this problem. Paying customers arrive already decided.",
   },
   {
-    number: "3",
+    number: "03",
     title: "Every paying customer comes from referrals or ads.",
     body: "Referrals dry up. Ads stop the moment you stop paying. Personal branding keeps working. Every month stronger than the last.",
   },
   {
-    number: "4",
+    number: "04",
     title: "You tried posting and it did not work.",
     body: "You posted. Got nothing. Stopped. The problem was never you. It was no system behind it.",
   },
@@ -107,8 +107,8 @@ const ProblemSection = () => {
               } flex items-center flex-col sm:flex-row justify-center py-[5vw]`}
           >
             <div className="flex w-full flex-col sm:flex-row items-start justify-center">
-              <div className="w-full sm:w-[13%] overflow-hidden">
-                <span className="problem-num inline-block text-[15vw] sm:text-[8vw] font-[heading2] leading-none">
+              <div className="w-full sm:w-[13%] overflow-hidden max-sm:text-start">
+                <span className="problem-num inline-block   text-[15vw]  sm:text-[8vw] font-[heading2] leading-none">
                   {item.number}
                 </span>
               </div>
