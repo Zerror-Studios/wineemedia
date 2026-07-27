@@ -15,7 +15,7 @@ const CtaButtonLight = ({ id, label = "Book Your Founder Strategy Call", classNa
         <h2 className="one capitalize whitespace-nowrap h-[4.5vw] sm:h-[2.3vw] md:h-[1.5vw] leading-[4.5vw] sm:leading-[2.3vw] md:leading-[1.5vw]">
           {label}
         </h2>
-        <h2 className="one capitalize whitespace-nowrap h-[4.5vw] sm:h-[2.3vw] md:h-[1.5vw] leading-[4.5vw] sm:leading-[2.3vw] md:leading-[1.5vw]">
+        <h2 className="one capitalize whitespace-nowrap h-[4.5vw] sm:h-[2.3vw] text-white md:h-[1.5vw] leading-[4.5vw] sm:leading-[2.3vw] md:leading-[1.5vw]">
           {label}
         </h2>
       </div>

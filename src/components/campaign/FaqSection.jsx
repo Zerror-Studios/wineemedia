@@ -71,7 +71,10 @@ const FaqSection = () => {
   }, []);
 
   return (
-    <section ref={containerRef} className="w-full px-[4vw] sm:px-[2vw] py-[6vw] sm:py-[3vw] text-center">
+    <section
+      ref={containerRef}
+      className="w-full px-[4vw] sm:px-[2vw] py-[6vw] sm:py-[3vw] text-center"
+    >
       <SectionHeaderLight
         title="FAQ"
         fullWidthLine
@@ -80,20 +83,16 @@ const FaqSection = () => {
 
       <div className="w-full flex justify-center">
         <div className="w-full sm:w-[63%] md:w-[70%] lg:w-[60%]">
-         <h3 className="font-[heading2] tracking-wide text-black text-[4vw] md:text-[2vw] mb-[2vw] sm:mb-[1vw]">
-  Questions{" "}
-  <span className="text-[#512477]">
-    Founders
-  </span>{" "}
-  Ask.
-</h3>
+          <h3 className="font-[heading2] tracking-wide text-black text-[4vw] md:text-[2vw] mb-[2vw] sm:mb-[1vw]">
+            Questions <span className="text-[#512477]">Founders</span> Ask.
+          </h3>
 
-<p className="font-[heading2] tracking-wide text-[3.5vw] sm:text-[1.6vw] md:text-[1.2vw] text-black mb-[8vw] sm:mb-[4vw]">
-  Deep Insight Into The{" "}
-  <span className="inline-block bg-[#512477] text-white px-[1vw] py-[0.2vw] rounded-[0.4vw] ">
-    Personal Branding System
-  </span>
-</p>
+          <p className="font-[heading2] tracking-wide text-[3.5vw] sm:text-[1.6vw] md:text-[1.2vw] text-black mb-[8vw] sm:mb-[4vw]">
+            Deep Insight Into The{" "}
+            <span className="inline-block bg-[#512477] text-white px-[1vw] py-[0.2vw] rounded-[0.4vw] ">
+              Personal Branding System
+            </span>
+          </p>
 
           <div className="w-full">
             {faqData.map((faq, index) => {
@@ -123,7 +122,7 @@ const FaqSection = () => {
                         : "max-h-0"
                     }`}
                   >
-                    <p className="font-[heading2] tracking-wide text-[3.8vw] sm:text-[1.6vw] md:text-[1.2vw] xl:text-[1.1vw] text-black/80 w-[95%] sm:w-[90%]">
+                    <p className="font-[heading2] text-start tracking-wide text-[3.8vw] sm:text-[1.6vw] md:text-[1.2vw] xl:text-[1.1vw] text-black/80 w-[95%] sm:w-[90%]">
                       {faq.a}
                     </p>
                   </div>

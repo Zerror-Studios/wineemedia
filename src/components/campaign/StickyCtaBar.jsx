@@ -56,7 +56,7 @@ const StickyCtaBar = () => {
   target="_blank"
   rel="noopener noreferrer"
   onClick={trackLead}
-  className="cta-glow viewall overflow-hidden effecttxt border bg-white px-[5vw] sm:px-[2.5vw] md:px-[1.8vw] relative rounded-full py-[2vw] sm:py-[.9vw] md:py-[.55vw] text-white inline-flex items-center gap-[1vw] cursor-pointer w-full md:w-auto justify-center"
+  className="cta-glow viewall overflow-hidden effecttxt  bg-white px-[5vw] sm:px-[2.5vw] md:px-[1.8vw] relative rounded-full py-[2vw] sm:py-[.9vw] md:py-[.55vw] text-white inline-flex items-center gap-[1vw] cursor-pointer w-full md:w-auto justify-center"
 >
   {/* Animated live indicator */}
   {/* <span className="relative flex h-3 w-3 z-[10]">
@@ -68,14 +68,14 @@ const StickyCtaBar = () => {
     <h2 className="one capitalize whitespace-nowrap text-[#512477] h-[4vw] sm:h-[2vw] md:h-[1.3vw] leading-[4vw] sm:leading-[2vw] md:leading-[1.3vw]">
       Book Your Founder Strategy Call
     </h2>
-    <h2 className="one capitalize  whitespace-nowrap text-[#512477] h-[4vw] sm:h-[2vw] md:h-[1.3vw] leading-[4vw] sm:leading-[2vw] md:leading-[1.3vw]">
+    <h2 className="one capitalize  whitespace-nowrap text-[white] h-[4vw] sm:h-[2vw] md:h-[1.3vw] leading-[4vw] sm:leading-[2vw] md:leading-[1.3vw]">
       Book Your Founder Strategy Call
     </h2>
   </div>
 
   <i className="ri-arrow-right-line relative z-[10] text-[#512477] text-[3.5vw] sm:text-[1.6vw] md:text-[1vw]" />
 
-  <div className="coverall transition-all duration-300 w-full h-full bg-[#dfd2e9] absolute left-1/2 -translate-x-1/2 top-full rounded-full" />
+  <div className="coverall transition-all duration-300 w-full h-full bg-[black] absolute left-1/2 -translate-x-1/2 top-full rounded-full" />
 </a>
       </div>
     </div>
