@@ -71,21 +71,29 @@ const FaqSection = () => {
   }, []);
 
   return (
-    <section ref={containerRef} className="w-full px-[4vw] sm:px-[2vw] py-[6vw] sm:py-[3vw]">
+    <section ref={containerRef} className="w-full px-[4vw] sm:px-[2vw] py-[6vw] sm:py-[3vw] text-center">
       <SectionHeaderLight
         title="FAQ"
         fullWidthLine
-        contentClassName="w-full sm:w-[63%] md:w-[70%] lg:w-[60%]"
+        contentClassName="w-full sm:w-[63%] md:w-[70%] lg:w-[60%] "
       />
 
       <div className="w-full flex justify-center">
         <div className="w-full sm:w-[63%] md:w-[70%] lg:w-[60%]">
-          <h3 className="font-[heading2] tracking-wide text-black text-[4vw] md:text-[2vw] mb-[2vw] sm:mb-[1vw]">
-            Questions Founders Ask.
-          </h3>
-          <p className="font-[heading2] tracking-wide text-[3.5vw] sm:text-[1.6vw] md:text-[1.2vw] text-black/50 mb-[8vw] sm:mb-[4vw]">
-            Deep Insight Into the Personal Branding System
-          </p>
+         <h3 className="font-[heading2] tracking-wide text-black text-[4vw] md:text-[2vw] mb-[2vw] sm:mb-[1vw]">
+  Questions{" "}
+  <span className="text-[#512477]">
+    Founders
+  </span>{" "}
+  Ask.
+</h3>
+
+<p className="font-[heading2] tracking-wide text-[3.5vw] sm:text-[1.6vw] md:text-[1.2vw] text-black mb-[8vw] sm:mb-[4vw]">
+  Deep Insight Into The{" "}
+  <span className="inline-block bg-[#512477] text-white px-[1vw] py-[0.2vw] rounded-[0.4vw] ">
+    Personal Branding System
+  </span>
+</p>
 
           <div className="w-full">
             {faqData.map((faq, index) => {

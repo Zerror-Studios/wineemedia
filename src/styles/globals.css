@@ -418,3 +418,22 @@ body {
   background: #512477;
 }
 
+@keyframes ctaGlow {
+  0%,
+  100% {
+    transform: scale(1);
+    box-shadow: 0 0 0 rgba(255, 255, 255, 0);
+  }
+
+  50% {
+    transform: scale(1.03);
+    box-shadow:
+      0 0 18px rgba(255, 255, 255, 0.45),
+      0 0 40px rgba(255, 255, 255, 0.15);
+  }
+}
+
+.cta-glow {
+  animation: ctaGlow 2s ease-in-out infinite;
+}
+

@@ -39,7 +39,8 @@ const HowItWorksSection = () => {
     if (!containerRef.current) return;
 
     const ctx = gsap.context(() => {
-      const stepContainers = containerRef.current.querySelectorAll(".step-container");
+      const stepContainers =
+        containerRef.current.querySelectorAll(".step-container");
 
       stepContainers.forEach((step) => {
         const line = step.querySelector(".step-line");
@@ -76,6 +77,7 @@ const HowItWorksSection = () => {
       const campaignParent = document.querySelector(".campaign_paren");
       const kndadc = document.querySelector(".kndadc");
       const problemRows = document.querySelectorAll(".problem-row");
+
       if (campaignParent) {
         gsap.to(campaignParent, {
           backgroundColor: "#ffffff",
@@ -87,6 +89,7 @@ const HowItWorksSection = () => {
           },
         });
       }
+
       if (kndadc) {
         gsap.to(kndadc, {
           color: "#000000",
@@ -97,6 +100,7 @@ const HowItWorksSection = () => {
           },
         });
       }
+
       if (problemRows.length > 0) {
         gsap.to(problemRows, {
           borderColor: "rgba(0, 0, 0, 0.5)",
@@ -113,10 +117,13 @@ const HowItWorksSection = () => {
   }, []);
 
   return (
-    <section ref={containerRef} className="w-full px-[4vw] sm:px-[2vw] py-[6vw] sm:py-[3vw]">
+    <section
+      ref={containerRef}
+      className="w-full px-[4vw] sm:px-[2vw] py-[6vw] sm:py-[3vw] text-center"
+    >
       <SectionHeaderLight title="How It Works" />
 
-      <h3 className="font-[heading2] tracking-wide  text-[4vw] md:text-[2vw] mb-[8vw] sm:mb-[4vw] md:w-[70%]">
+      <h3 className="font-[heading2] tracking-wide text-[4vw] md:text-[2vw] mb-[8vw] sm:mb-[4vw] md:w-[70%] mx-auto">
         One Session a Month From You. Everything Else Handled.
       </h3>
 
@@ -124,20 +131,23 @@ const HowItWorksSection = () => {
         {steps.map((step) => (
           <div
             key={step.number}
-            className="step-container w-full md:w-1/2 md:pr-[3vw] md:pb-[5vw]"
+            className="step-container w-full md:w-1/2 md:pr-[3vw] md:pb-[5vw] flex justify-center"
           >
-            <div>
+            <div className="w-full md:w-[90%]">
               <div className="w-full h-[1px] relative mb-[4vw] sm:mb-[2vw]">
                 <div className="step-line absolute left-0 top-0 h-full bg-black/50 w-0" />
               </div>
-              <div className="step-content">
+
+              <div className="step-content text-center">
                 <p className="font-[heading2] tracking-wide text-[3.5vw] sm:text-[1.5vw] md:text-[1.1vw] text-black/80 mb-[2vw] sm:mb-[1vw]">
                   ({step.number}) {step.label}
                 </p>
+
                 <h4 className="font-[heading] tracking-wide text-[4vw] sm:text-[3vw] md:text-[1.8vw] lg:text-[1.4vw] text-black mb-[2vw] sm:mb-[1vw]">
                   {step.title}
                 </h4>
-                <p className="font-[heading2] tracking-wide text-[4vw] sm:text-[2vw] md:text-[1.8vw] lg:text-[1.3vw] xl:text-[1.2vw] text-black md:w-[90%]">
+
+                <p className="font-[heading2] tracking-wide text-[4vw] sm:text-[2vw] md:text-[1.8vw] lg:text-[1.3vw] xl:text-[1.2vw] text-black md:w-[90%] mx-auto">
                   {step.body}
                 </p>
               </div>
@@ -150,4 +160,3 @@ const HowItWorksSection = () => {
 };
 
 export default HowItWorksSection;
-

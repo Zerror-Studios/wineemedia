@@ -61,27 +61,43 @@ const ProblemSection = () => {
   }, []);
 
   return (
-    <section ref={containerRef} className="w-full px-[4vw] sm:px-[2vw] py-[6vw] sm:py-[3vw]">
+    <section
+      ref={containerRef}
+      className="w-full px-[4vw] sm:px-[2vw] py-[6vw] sm:py-[3vw] text-center"
+    >
       <SectionHeader
         title="The Problem"
         fullWidthLine
-        contentClassName="w-full sm:w-[63%] md:w-[73%] lg:w-[63%]"
+        contentClassName="w-full sm:w-[63%] md:w-[73%] lg:w-[63%] mx-auto"
       />
 
-      <div className="w-full flex justify-center">
-        <div className="w-full sm:w-[63%] md:w-[73%] lg:w-[63%]">
-          <h3 className="font-[heading2] tracking-wide text-white text-[4vw] md:text-[2vw] mb-[5vw] sm:mb-[3vw]">
-            The Problem Is Not Your Business. Nobody Outside Your Network Knows
-            It Exists.
-          </h3>
+     <div className="w-full flex justify-center">
+  <div className="w-full sm:w-[63%] md:w-[73%] lg:w-[63%] mx-auto">
+    <h3 className="font-[heading2] tracking-wide text-white text-[4vw] md:text-[2vw] mb-[5vw] sm:mb-[3vw]">
+      The Problem Is Not Your Business.{" "}
+      <span className="text-[#9B6DFF]">
+        Nobody Outside Your Network
+      </span>{" "}
+      Knows It Exists.
+    </h3>
 
-          <p className="font-[heading2] tracking-wide text-[4vw] sm:text-[2vw] md:text-[1.8vw] lg:text-[1.3vw] xl:text-[1.2vw] text-white mb-[8vw] sm:mb-[4vw]">
-            Right now a paying customer is searching for what you offer. They
-            find your competitor first. Not because that competitor is better.
-            Because they have personal branding working for them and you do not.
-          </p>
-        </div>
-      </div>
+    <p className="font-[heading2] tracking-wide text-[4vw] sm:text-[2vw] md:text-[1.8vw] lg:text-[1.3vw] xl:text-[1.2vw] text-white mb-[8vw] sm:mb-[4vw]">
+      Right now a{" "}
+      <span className="inline-block bg-[#512477] text-white px-[1vw] py-[0.2vw] rounded-[0.4vw] shadow-[0_8px_30px_rgba(81,36,119,0.35)]">
+        paying customer
+      </span>{" "}
+      is searching for what you offer. They find your{" "}
+      <span className="text-[#9B6DFF]">
+        competitor first
+      </span>
+      . Not because that competitor is better. Because they have{" "}
+      <span className="text-[#9B6DFF]">
+        personal branding
+      </span>{" "}
+      working for them and you do not.
+    </p>
+  </div>
+</div>
 
       <div className=" kndadc w-full text-white py-[6vw] sm:py-[2vw] sm:px-0">
         {problems.map((item, index) => (
