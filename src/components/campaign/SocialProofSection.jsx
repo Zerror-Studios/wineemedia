@@ -175,7 +175,7 @@ const SocialProofSection = ({ onWatchStory }) => {
     {stories.map((story, i) => (
       <div
         key={story.videoId}
-        className="w-full sm:w-1/2 flex flex-col items-center text-center"
+        className="w-full sm:w-1/2 flex flex-col  text-start"
       >
         <div className="w-full aspect-[4/5] sm:aspect-square bg-[#ffffff0e] overflow-hidden mb-[5vw] sm:mb-[2vw]">
           <img
@@ -187,7 +187,7 @@ const SocialProofSection = ({ onWatchStory }) => {
           />
         </div>
 
-        <p className="font-[heading] tracking-wide text-[3.5vw] sm:text-[1.5vw] md:text-[1.1vw] text-white/50 mb-[2vw] sm:mb-[1vw]">
+        <p className="font-[heading]   tracking-wide text-[3.5vw] sm:text-[1.5vw] md:text-[1.1vw] text-white/50 mb-[2vw] sm:mb-[1vw]">
           {story.badge}
         </p>
 
@@ -202,7 +202,7 @@ const SocialProofSection = ({ onWatchStory }) => {
           {story.company}
         </p>
 
-        <p className="font-[heading2] tracking-wide text-[3.8vw] sm:text-[1.4vw] md:text-[1.1vw] text-white mb-[5vw] sm:mb-[2vw] w-[80%] sm:w-[65%] mx-auto flex-grow">
+        <p className="font-[heading2] tracking-wide text-[3.8vw] sm:text-[1.4vw] md:text-[1.1vw] text-white mb-[5vw] sm:mb-[2vw] w-[80%] sm:w-[65%]  flex-grow">
           {story.result}
         </p>
 

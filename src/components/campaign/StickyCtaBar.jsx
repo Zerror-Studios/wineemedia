@@ -28,7 +28,7 @@ const StickyCtaBar = () => {
   return (
     <div className="fixed bottom-0 left-0 right-0 w-full bg-[#512477] border-t border-white/20 z-50">
       <div className="h-[16vw] sm:h-[8vw] md:h-[5vw] px-[4vw] sm:px-[2vw] flex items-center justify-between">
-        <p className="hidden md:block font-[heading2] tracking-wide text-[1.1vw] text-white/80">
+        <p className="hidden md:block font-[heading2] font-semibold tracking-wide text-[1.1vw] text-white/80">
           Limited founder spots each month
         </p>
 
@@ -59,12 +59,12 @@ const StickyCtaBar = () => {
   className="cta-glow viewall overflow-hidden effecttxt border bg-white px-[5vw] sm:px-[2.5vw] md:px-[1.8vw] relative rounded-full py-[2vw] sm:py-[.9vw] md:py-[.55vw] text-white inline-flex items-center gap-[1vw] cursor-pointer w-full md:w-auto justify-center"
 >
   {/* Animated live indicator */}
-  <span className="relative flex h-3 w-3 z-[10]">
+  {/* <span className="relative flex h-3 w-3 z-[10]">
     <span className="absolute inline-flex h-full w-full rounded-full bg-White animate-ping opacity-75"></span>
     <span className="relative inline-flex h-3 w-3 rounded-full bg-[#512477]"></span>
-  </span>
+  </span> */}
 
-  <div className="relative z-[10] overflow-hidden h-[4vw] sm:h-[2vw] md:h-[1.3vw] text-[2.6vw] sm:text-[1.4vw] md:text-[.95vw] font-[heading]">
+  <div className="relative z-[10] overflow-hidden font-semibold h-[4vw] sm:h-[2vw] md:h-[1.3vw] text-[2.6vw] sm:text-[1.4vw] md:text-[.95vw] font-[heading]">
     <h2 className="one capitalize whitespace-nowrap text-[#512477] h-[4vw] sm:h-[2vw] md:h-[1.3vw] leading-[4vw] sm:leading-[2vw] md:leading-[1.3vw]">
       Book Your Founder Strategy Call
     </h2>

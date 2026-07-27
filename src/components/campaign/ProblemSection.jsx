@@ -113,10 +113,10 @@ const ProblemSection = () => {
                 </span>
               </div>
               <div className="problem-content w-full sm:w-[50%] md:w-[60%] lg:w-[50%]">
-                <h4 className="text-[6vw] my-[2vw] sm:my-0 md:text-[3vw] lg:text-[2vw] font-[heading] leading-none">
+                <h4 className="text-[6vw] my-[2vw] sm:my-0 md:text-[3vw] text-start lg:text-[2vw] font-[heading] leading-none">
                   {item.title}
                 </h4>
-                <p className="text-[4vw] sm:text-[2vw] md:text-[1.8vw] font-[heading2] tracking-wide lg:text-[1.3vw] xl:text-[1.2vw] mt-[.8vw]">
+                <p className="text-[4vw] sm:text-[2vw] md:text-[1.8vw] text-start font-[heading2] tracking-wide lg:text-[1.3vw] xl:text-[1.2vw] mt-[.8vw]">
                   {item.body}
                 </p>
               </div>
