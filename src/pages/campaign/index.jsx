@@ -23,7 +23,7 @@ const Campaign = ({ meta }) => {
       <SeoHeader meta={meta} />
       <Script src="https://fast.wistia.com/player.js" strategy="lazyOnload" />
       <Script
-        src="https://fast.wistia.com/embed/zgy68e6hrb.js"
+        src="https://fast.wistia.com/embed/fthlw73m9l.js"
         strategy="lazyOnload"
         type="module"
       />
@@ -44,17 +44,11 @@ const Campaign = ({ meta }) => {
 
         <main className="relative z-10 w-full">
           <Hero />
-          {/* <SectionDivider className="mx-[4vw] sm:mx-[2vw] w-auto" /> */}
           <VslSection />
-          {/* <SectionDivider className="mx-[4vw] sm:mx-[2vw] w-auto" /> */}
           <SocialProofSection onWatchStory={setActiveVideoId} />
-          {/* <SectionDivider className="mx-[4vw] sm:mx-[2vw] w-auto" /> */}
           <ProblemSection />
-          {/* <SectionDivider className="mx-[4vw] sm:mx-[2vw] w-auto" /> */}
           <HowItWorksSection />
-          {/* <SectionDivider className="mx-[4vw] sm:mx-[2vw] w-auto" /> */}
           <FaqSection />
-          {/* <SectionDivider className="mx-[4vw] sm:mx-[2vw] w-auto" /> */}
           <FinalCtaSection />
         </main>
 

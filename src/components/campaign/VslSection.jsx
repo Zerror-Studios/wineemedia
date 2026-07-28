@@ -39,7 +39,7 @@ const VslSection = () => {
         ref={videoWrapperRef}
         className="aspect-video bg-[#ffffff0e] overflow-hidden w-[60%]"
       >
-        <WistiaPlayer mediaId="zgy68e6hrb" aspect="1.7777777777777777" />
+        <WistiaPlayer mediaId="fthlw73m9l" aspect="1.7777777777777777" />
       </div>
     </section>
   );
