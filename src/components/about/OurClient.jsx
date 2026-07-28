@@ -62,7 +62,7 @@ const OurClient = ({clientData}) => {
                         <div className='clipeffect absolute bottom-0 left-0 h-full w-full bg-zinc-800' style={{ clipPath: "polygon(0 100%, 100% 100%, 100% 100%, 0% 100%)" }}>
                             <Image width={1000} height={1000} className='w-full h-full object-cover' src={c.images} alt={c.name}/>
                         </div>
-                        <Image width={1000} height={1000} className='w-[50%] h-auto relative ' style={{ filter: " grayscale(100%)  contrast(100%)" }} src={c.logo} alt={c.name} title={c.name} />
+                        <Image width={1000} height={1000} className='w-[50%] h-auto relative ' src={c.logo} alt={c.name} title={c.name} />
                     </div>))
                 }
 

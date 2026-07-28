@@ -72,7 +72,7 @@ const Footer = () => {
                     <h3 className='block  sm:block md:hidden logo-title text-[12.5vw] font-[styles]  whitespace-nowrap leading-none' >WineeMedia</h3>
                 </div>
                 <div className='w-full flex text-[3.6vw] tracking-wide flex-col sm:flex-row  sm:text-[2vw] md:text-[1.8vw]  lg:text-[1.3vw] xl:text-[1vw] text-white/50 font-[heading2] items-left sm:items-center justify-between'>
-                    <h6 className='mb-[.6vw] mt-[2vw] sm:mt-0 sm:mb-0'>© 2024 by WineeMedia.</h6>
+                    <h6 className='mb-[.6vw] mt-[2vw] sm:mt-0 sm:mb-0'>© {new Date().getFullYear()} by WineeMedia.</h6>
                     <h6>Developed By <Link target='_blank' title='zerrorstudios' href="https://www.zerrorstudios.com/" className='zerror-link font-[heading2] text-white/80'>Zerror Studios</Link></h6>
                 </div>
             </div>
