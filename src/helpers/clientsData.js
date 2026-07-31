@@ -7,7 +7,7 @@ export const clientData = [
     {
         logo: "/clients/kapils.png",
         name: "kapil salon",
-        images: "/clients/bg/Kapils%20salon.png"
+        images: "/clients/bg/Kapils salon.png"
     },
     {
         logo: "/clients/akto.png",
@@ -27,12 +27,12 @@ export const clientData = [
     {
         logo: "/clients/the_jewel_house_WHITE.png",
         name: "the jewel house",
-        images: "/clients/bg/The%20Jewel%20House.png"
+        images: "/clients/bg/The Jewel House.png"
     },
     {
         logo: "/clients/bhavya.png",
         name: "bhavya creation",
-        images: "/clients/bg/Bhavya%20Creation.png"
+        images: "/clients/bg/Bhavya Creation.png"
     },
     {
         logo: "/clients/orynthis.png",
@@ -97,6 +97,6 @@ export const clientData = [
     {
         logo: "/clients/shakti.png",
         name: "shakti",
-        images: "/clients/bg/Shakti%20Shirting.jpg"
+        images: "/clients/bg/Shakti Shirting.jpg"
     },
 ]
