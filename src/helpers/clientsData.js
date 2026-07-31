@@ -97,6 +97,6 @@ export const clientData = [
     {
         logo: "/clients/shakti.png",
         name: "shakti",
-        images: "/clients/bg/Shakti Shirting.jpg"
+        images: "/clients/bg/Shakti Shirting (2).jpg"
     },
 ]
