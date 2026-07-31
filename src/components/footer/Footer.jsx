@@ -55,7 +55,7 @@ const Footer = () => {
                         <Link href="/" className='link-hover' title='Home'>Home</Link>
                         <Link href="/work" className='link-hover' title='Work'>Work</Link>
                         <Link href="/about-us" className='link-hover' title='About'>About</Link>
-                        <Link href="/campaign" className='link-hover' title='About'>Campaign</Link>
+                        <Link href="/campaign" className='link-hover' title='Personal Branding'>Personal Branding</Link>
                         <Link href="/privacy-policy" className='link-hover' title='About'>Privacy Policy</Link>
                     </div>
                     <div className='flex flex-col gap-[.3vw] text-[4vw] sm:text-[2.5vw] md:text-[1.8vw] tracking-wide lg:text-[1.3vw] xl:text-[1vw]'>

@@ -48,7 +48,7 @@ export const menus = [
     ],
   },
   {
-    name: "Campaign",
+    name: "Personal Branding",
     link: "/campaign",
     submenus: [
     ],

@@ -55,7 +55,7 @@ const Menu = () => {
           <Link onClick={() => setisOpenm(false)} href="/work" title='work' className='mtxt inline-block text-[10vw] font-[heading2] font-semibold text-white leading-[1.15]'>Work</Link>
         </div>
         <div className='overflow-hidden pb-[0.15em]'>
-          <Link onClick={() => setisOpenm(false)} href="/campaign" title='campaigns' className='mtxt inline-block text-[10vw] font-[heading2] font-semibold text-white leading-[1.15]'>Campaigns</Link>
+          <Link onClick={() => setisOpenm(false)} href="/campaign" title='Personal Branding' className='mtxt inline-block text-[10vw] font-[heading2] font-semibold text-white leading-[1.15]'>Personal Branding</Link>
         </div>
         <div className='overflow-hidden pb-[0.15em]'>
           <div onClick={() => {

@@ -24,7 +24,7 @@ const Transition = ({ children }) => {
   const getRouteName = () => {
     if (isHomePage) return "wineemedia";
     if (isAboutPage) return "about";
-    if (isCampaignPage) return "campaign";
+    if (isCampaignPage) return "personal branding";
     if (isWorkPage) {
       const workName = router.query.name;
       return workName ? `${workName}` : "work";
