@@ -332,8 +332,8 @@ const PrivacyPolicy = () => {
               </li>
               <li>
                 <span className="text-white/50">Phone:</span>{" "}
-                <a href="tel:+918879499293" className="underline underline-offset-2">
-                  88794 99293
+                <a href="tel:+919372320060" className="underline underline-offset-2">
+                9372320060
                 </a>
               </li>
               <li>
