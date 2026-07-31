@@ -41,7 +41,7 @@ const Navbar = ({ nav }) => {
       <Link href="/" title='home' ><img className='w-[15vw] md:w-[7vw] h-auto lg:w-[7vw] xl:w-[5vw]' src="/logo.png" alt="Wineemedia-logo" title='Wineemedia-logo' /></Link>
       <div className='hidden sm:flex items-start sm:gap-[6vw] md:gap-[2.5vw] capitalize sm:text-[3vw]  md:text-[1.8vw] lg:text-[1.3vw] xl:text-[1vw] font-[font6]'>
         {menus.map((m, i) => <Link key={i} href={m.link} title={m.name}>
-          <div className={`effecttxt overflow-hidden h-[1.3em] ${m.link === "/campaign" ? "bg-[#512477] text-white px-[0.7em] rounded-[0.35em]" : ""}`}>
+          <div className='effecttxt overflow-hidden h-[1.3em]'>
             <h2 className='one leading-[1.3]'>{m.name}</h2>
             <h2 className='one leading-[1.3]'>{m.name}</h2>
           </div>
