@@ -45,23 +45,23 @@ const Menu = () => {
         <h4 onClick={() => setisOpenm(false)} className='text-[6vw] font-[font4] sm:hidden'><AiOutlineClose /></h4>
       </div>
       <div className='flex flex-col px-4 text-white items-start'>
-        <div className='overflow-hidden'>
-          <Link onClick={() => setisOpenm(false)} href="/" title='home' className='mtxt inline-block text-[10vw] font-[heading2] font-semibold text-white'>Home</Link >
+        <div className='overflow-hidden pb-[0.15em]'>
+          <Link onClick={() => setisOpenm(false)} href="/" title='home' className='mtxt inline-block text-[10vw] font-[heading2] font-semibold text-white leading-[1.15]'>Home</Link >
         </div>
-        <div className='overflow-hidden'>
-          <Link onClick={() => setisOpenm(false)} href="/about-us" title='about-us' className='mtxt inline-block text-[10vw] font-[heading2] font-semibold text-white'>About</Link >
+        <div className='overflow-hidden pb-[0.15em]'>
+          <Link onClick={() => setisOpenm(false)} href="/about-us" title='about-us' className='mtxt inline-block text-[10vw] font-[heading2] font-semibold text-white leading-[1.15]'>About</Link >
         </div>
-        <div className='overflow-hidden'>
-          <Link onClick={() => setisOpenm(false)} href="/work" title='work' className='mtxt inline-block text-[10vw] font-[heading2] font-semibold text-white'>Work</Link>
+        <div className='overflow-hidden pb-[0.15em]'>
+          <Link onClick={() => setisOpenm(false)} href="/work" title='work' className='mtxt inline-block text-[10vw] font-[heading2] font-semibold text-white leading-[1.15]'>Work</Link>
         </div>
-        <div className='overflow-hidden'>
-          <Link onClick={() => setisOpenm(false)} href="/campaign" title='campaigns' className='mtxt inline-block text-[10vw] font-[heading2] font-semibold text-white'>Campaigns</Link>
+        <div className='overflow-hidden pb-[0.15em]'>
+          <Link onClick={() => setisOpenm(false)} href="/campaign" title='campaigns' className='mtxt inline-block text-[10vw] font-[heading2] font-semibold text-white bg-[#512477] px-[3vw] py-[1vw] rounded-[1.5vw] leading-[1.15]'>Campaigns</Link>
         </div>
-        <div className='overflow-hidden'>
+        <div className='overflow-hidden pb-[0.15em]'>
           <div onClick={() => {
             setisOpenm(false)
             setisOpen(true)
-          }} className='mtxt inline-block text-[10vw] font-[heading2] font-semibold text-white'>Contact</div>
+          }} className='mtxt inline-block text-[10vw] font-[heading2] font-semibold text-white leading-[1.15]'>Contact</div>
         </div>
         <div className='overflow-hidden mt-[8vw]'>
           <Link href="https://www.instagram.com/wineemedia/" target='_blank' title='work' className='mtxt inline-block text-[4vw] font-[heading2] text-white'>Instagram</Link>

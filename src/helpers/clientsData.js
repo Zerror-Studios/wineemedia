@@ -2,17 +2,17 @@ export const clientData = [
     {
         logo: "/clients/Oppo.png",
         name: "oppo",
-        images: "/images/dawn-cover1.webp"
+        images: "/clients/bg/oppo.png"
     },
     {
         logo: "/clients/kapils.png",
         name: "kapil salon",
-        images: "/images/dawn-cover1.webp"
+        images: "/clients/bg/Kapils%20salon.png"
     },
     {
         logo: "/clients/akto.png",
         name: "akto studio",
-        images: "/images/dawn-cover1.webp"
+        images: "/clients/bg/Studio_Akto.jpg"
     },
     {
         logo: "/clients/dawn.webp",
@@ -23,6 +23,21 @@ export const clientData = [
         logo: "/clients/zerror.svg",
         name: "zerror studios",
         images: "/images/zerror-cover1.webp"
+    },
+    {
+        logo: "/clients/the_jewel_house_WHITE.png",
+        name: "the jewel house",
+        images: "/clients/bg/The%20Jewel%20House.png"
+    },
+    {
+        logo: "/clients/bhavya.png",
+        name: "bhavya creation",
+        images: "/clients/bg/Bhavya%20Creation.png"
+    },
+    {
+        logo: "/clients/orynthis.png",
+        name: "orynthis",
+        images: "/clients/bg/Orynthis.jpg"
     },
     {
         logo: "/clients/envision.webp",
@@ -50,14 +65,9 @@ export const clientData = [
         images: "/images/maab-cover1.webp"
     },
     {
-        logo: "/clients/bhavya_creation.png",
-        name: "bhavya creation",
-        images: "/images/dawn-cover1.webp"
-    },
-    {
-        logo: "/clients/the_jewel_house_WHITE.png",
-        name: "the jewel house",
-        images: "/images/dawn-cover1.webp"
+        logo: "/clients/tricolor_logo.webp",
+        name: "tricolour properties",
+        images: "/clients/bg/tricolour.jpg"
     },
     {
         logo: "/clients/brandCreation.webp",
@@ -77,16 +87,16 @@ export const clientData = [
     {
         logo: "/clients/amc.png",
         name: "amc",
-        images: "/images/dawn-cover1.webp"
+        images: "/clients/bg/AMC.jpg"
     },
     {
         logo: "/clients/ans_global.png",
         name: "ans global",
-        images: "/images/dawn-cover1.webp"
+        images: "/clients/bg/ANS.jpg"
     },
     {
         logo: "/clients/shakti.png",
         name: "shakti",
-        images: "/images/dawn-cover1.webp"
+        images: "/clients/bg/Shakti%20Shirting.jpg"
     },
 ]

@@ -21,20 +21,34 @@ const Campaign = ({ meta }) => {
   return (
     <>
       <SeoHeader meta={meta} />
-      <Script src="https://fast.wistia.com/player.js" strategy="lazyOnload" />
+      <Script
+        id="wistia-captions-off"
+        strategy="beforeInteractive"
+        dangerouslySetInnerHTML={{
+          __html: `
+            window.wistiaOptions = window.wistiaOptions || {};
+            window.wistiaOptions._all = Object.assign({}, window.wistiaOptions._all, {
+              plugin: Object.assign({}, (window.wistiaOptions._all && window.wistiaOptions._all.plugin) || {}, {
+                captions: { onByDefault: false }
+              })
+            });
+          `,
+        }}
+      />
+      <Script src="https://fast.wistia.com/player.js" strategy="afterInteractive" />
       <Script
         src="https://fast.wistia.com/embed/fthlw73m9l.js"
-        strategy="lazyOnload"
+        strategy="afterInteractive"
         type="module"
       />
       <Script
         src="https://fast.wistia.com/embed/wqhrax2dg1.js"
-        strategy="lazyOnload"
+        strategy="afterInteractive"
         type="module"
       />
       <Script
         src="https://fast.wistia.com/embed/tsa2afghr8.js"
-        strategy="lazyOnload"
+        strategy="afterInteractive"
         type="module"
       />
 
